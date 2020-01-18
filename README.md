@@ -17,6 +17,15 @@ Here the project for uploading items to platform hk.carousell.com
 * And Finally, run main script `honk.py` by giving path of csv file. 
   * Open your cmd in location of script, and type `python honk.py sample.csv` [screen](Screenshot_2.png)
   
+### Login with other account
+
+* Run script `savecook.py`. It will open website hk.carousell.com
+   * Type you login and password
+   * Pass verification test of human
+And it will automatically closed when you sucessfully authorized
+
+
+  
 
 
 
