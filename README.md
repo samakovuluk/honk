@@ -15,7 +15,7 @@ Here the project for uploading items to platform hk.carousell.com
 * Open `honk.py` via notepad or IDLE, in line 12 `driver = webdriver.Chrome('path')` instead of path set location of `chromedriver.exe`
  * Example my is `driver = webdriver.Chrome('D:/Chromedriver_win32/chromedriver.exe')`
 * And Finally, run main script `honk.py` by giving path of csv file. 
-  * For run, open your cmd in location of script, and type `python honk.py sample.csv`
+  * For run, open your cmd in location of script, and type `python honk.py sample.csv` [screen](Screenshot_2.png)
   
 
 
