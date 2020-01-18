@@ -20,7 +20,7 @@ Here the project for uploading items to platform hk.carousell.com
 ### Login with other account
 
 * Run script `savecook.py`. It will open website hk.carousell.com
-   * Type you login and password
+   * Type your login and password
    * Pass verification test of human
 And it will automatically closed when you sucessfully authorized
 
