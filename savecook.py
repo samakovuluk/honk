@@ -13,4 +13,13 @@ driver = webdriver.Chrome('D:/Chromedriver_win32/chromedriver.exe')
 
 driver.get(url)
 
-#pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
+while True:
+    time.sleep(2)
+    try:
+        driver.find_element_by_xpath("//button[@type = 'button'][contains(text(), 'New User? Register')]");
+    except:
+        time.sleep(3)
+        pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
+        break
+
+driver.quit()
