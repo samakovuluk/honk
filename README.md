@@ -2,7 +2,7 @@
 
 Here the project for uploading items to platform hk.carousell.com
 
-### Requirements for scipt
+### Requirements for script
 * Install python, which version greater 3, with adding Windows path https://datatofish.com/add-python-to-windows-path/
 * Library Selenium, to install just open cmd and type `pip install selenium`
 
