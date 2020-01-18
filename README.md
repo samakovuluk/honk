@@ -9,7 +9,7 @@ Here the project for uploading items to platform hk.carousell.com
 ### Instruction to start script
 * You need authorize
   * Run the script `savecook.py` and authorize.
-  * script will open website hk.carousell.com, you need log in and pass verification of human, after successfully authorization it automatically close.
+  * script will open website hk.carousell.com, you need log in and pass verification test of human, after successfully authorization it will automatically close.
 * Fill your items in csv file, for sample you can see file `sample.csv`
   * there fieds: category_parent, category, category_child, title, condition(Used,New), Price, Description, Photo
 * Open `honk.py` via notepad or IDLE, in line 12 `driver = webdriver.Chrome('path')` instead of path set location of `chromedriver.exe` [screen](Screenshot_3.png)
