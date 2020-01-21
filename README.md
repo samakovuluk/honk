@@ -47,6 +47,7 @@ and in the button `sign up` click right mouse, and there will be option `Inspect
 So in selenium there a lot of options to find elements, you can find elements by function `find_element_by_css' , 'find_element_by_class_name', 'find_element_by_xpath'.
 
 #### Actions in the script
+Here main actions of the script, in source you can see code implemetation of action.
 * Init actions
     * Open url hk.carousell.com [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L20)
     * Uploading cookie [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L254)
@@ -62,6 +63,7 @@ So in selenium there a lot of options to find elements, you can find elements by
     * Wait 5 seconds
     * Write result in log file [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L27)
     * Upload next item
+    
 
 
 
