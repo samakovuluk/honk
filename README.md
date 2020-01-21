@@ -6,7 +6,7 @@ Here the project for uploading items to platform hk.carousell.com
 * Install python, which version greater 3, with adding Windows path https://datatofish.com/add-python-to-windows-path/
 * Library Selenium, to install just open cmd and type `pip install selenium`
 
-### Instruction to start script
+#### Instruction to start script
 * You need authorize
   * Run the script `savecook.py` and authorize.
   * script will open website hk.carousell.com, you need log in and pass verification test of human, after successfully authorization it will automatically close.
@@ -17,14 +17,14 @@ Here the project for uploading items to platform hk.carousell.com
 * And Finally, run main script `honk.py` by giving path of csv file. 
   * Open your cmd in location of script, and type `python honk.py sample.csv` [screen](Screenshot_2.png)
   
-### Login with other account
+#### Login with other account
 
 * Run script `savecook.py`. It will open website hk.carousell.com
    * Type your login and password
    * Pass verification test of human
 And it will automatically closed when you sucessfully authorized
 
-### How it works
+## How it works
 
 #### Problem
 We need an automated script which will upload item independently.
