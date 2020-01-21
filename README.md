@@ -24,7 +24,7 @@ Here the project for uploading items to platform hk.carousell.com
    * Pass verification test of human
 And it will automatically closed when you sucessfully authorized
 
-## How it works
+# How it works
 
 #### Problem
 We need an automated script which will upload item independently.
