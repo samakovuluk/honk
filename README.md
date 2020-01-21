@@ -31,6 +31,23 @@ We need an automated script which will upload item independently.
 #### Solution
 Project working with library Selenium. As we know Selenium is s a free (open source) automated testing suite for web applications. And this tool I used for uploading items to hk.carousell.com. Selenium is perfect decision for our task. 
 So script doing step by step tasks: 
+#### What you need to know about Selenium
+Selenium able to do what the user can does on the site. Only needs to be configured correctly. 
+How is everything going. So for example we have task, that script need open website facebook.com click to button `sign up` with name `websubmit`.
+```
+   import selenium
+   driver = webdriver.Chrome('chromedriver.exe')
+   driver.get('https://www.facebook.com/')
+   el = driver.find_element_by_name('websubmit')
+   el.click()
+```
+As you see we found element by name and click, so you wanna ask how to get name of button. It is easy just open the website facebook.com,
+and in the button `sign up` click right mouse, and there will be option `Inspect code` and select this. After you will able to see source  (html), in the right side. There will shaded code wchich is source of button. In the shaded source will be parameter `name=websubmit`, so we now know that name of the button is `websubmit`  
+   
+
+
+
+#### Actions
 * Init actions
     * Open url hk.carousell.com [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L20)
     * Uploading cookie [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L254)
