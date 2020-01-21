@@ -42,12 +42,9 @@ How is everything going. So for example we have task, that script need open webs
    el.click()
 ```
 As you see we found element by name and click, so you wanna ask how to get name of button. It is easy just open the website facebook.com,
-and in the button `sign up` click right mouse, and there will be option `Inspect code` and select this. After you will able to see source  (html), in the right side. There will shaded code wchich is source of button. In the shaded source will be parameter `name=websubmit`, so we now know that name of the button is `websubmit`  
-   
+and in the button `sign up` click right mouse, and there will be option `Inspect code` and select this. After you will able to see source  (html), in the right side. There will shaded [code](https://github.com/samakovuluk/honk/blob/master/Screenshot_8.png) wchich is source of button. In the shaded source will be parameter `name=websubmit`, so we now know that name of the button is `websubmit`.
 
-
-
-#### Actions
+#### Actions in the script
 * Init actions
     * Open url hk.carousell.com [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L20)
     * Uploading cookie [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L254)
@@ -63,6 +60,7 @@ and in the button `sign up` click right mouse, and there will be option `Inspect
     * Wait 5 seconds
     * Write result in log file [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L27)
     * Upload next item
+
 
 
 
