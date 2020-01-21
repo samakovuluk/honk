@@ -32,19 +32,19 @@ We need an automated script which will upload item independently.
 Project working with library Selenium. As we know Selenium is s a free (open source) automated testing suite for web applications. And this tool I used for uploading items to hk.carousell.com. Selenium is perfect decision for our task. 
 So script doing step by step tasks: 
 * Init actions
-    * Open url hk.carousell.com 
-    * Select language English
-    * Uploading cookie
+    * Open url hk.carousell.com [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L20)
+    * Uploading cookie [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L254)
+    * Select language English [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L265)
     * Open url hk.carousell.com/sell
 * Uploading items one by one
-    * Open csv file where items
-    * Get photo value from csv and upload photo
-    * Choose category and category child
-    * Choose randomly and Put text in fields where is required
-    * Fill items fields (title, price, condition, description)
-    * Submit
+    * Open csv file where items [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L195)
+    * Get photo value from csv and upload photo [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L197)
+    * Choose category and category child [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L211)
+    * Choose randomly and Put text in fields where is required [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L55)
+    * Fill items fields (title, price, condition, description) [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L155)
+    * Submit [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L129)
     * Wait 5 seconds
-    * Write result in log file
+    * Write result in log file [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L27)
     * Upload next item
 
 
