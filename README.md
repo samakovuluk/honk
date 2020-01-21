@@ -24,11 +24,28 @@ Here the project for uploading items to platform hk.carousell.com
    * Pass verification test of human
 And it will automatically closed when you sucessfully authorized
 
+### How it works
 
-  
+##### Problem
+We need an automated script which will upload item independently.
 
-
-
-
-
+##### Solution
+Project working with library Selenium. As we know Selenium is s a free (open source) automated testing suite for web applications across different browsers and platforms. And this tool I used for uploading items to hk.carousell.com. Selenium is perfect decision for our task. 
+So script doing step by step task: 
+* Init actions
+    * Open url hk.carousell.com 
+    * Select language English
+    * Uploading cookie
+    * Open url hk.carousell.com/sell
+* Uploading items
+    * Opening csv file where items
+    * Parsing item one by one
+    * Get photo value and uploading photo
+    * Choose category and category child
+    * Choose randomly and Put text in fields where is required
+    * Fill items fields (title, price, condition, description)
+    * Submit
+    * Write result in log file
+   
+    
 
