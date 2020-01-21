@@ -37,14 +37,15 @@ So script doing step by step tasks:
     * Uploading cookie
     * Open url hk.carousell.com/sell
 * Uploading items one by one
-    * Opening csv file where items
-    * Get photo value from csv and uploading photo
+    * Open csv file where items
+    * Get photo value from csv and upload photo
     * Choose category and category child
     * Choose randomly and Put text in fields where is required
     * Fill items fields (title, price, condition, description)
     * Submit
     * Wait 5 seconds
     * Write result in log file
+    * Upload next item
 
 
 
