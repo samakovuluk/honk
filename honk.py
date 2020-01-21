@@ -22,7 +22,8 @@ driver.execute_script('window.localStorage.clear();')
 time.sleep(1)
 
 
-
+#Writing result in LogFile, getting two parameters list and boolean.
+#list which is containg values of item, and boolean result of uploaded item 
 def submitLog(row, b):
     logs = open('log.txt','a+')
     for i in row:
@@ -37,7 +38,7 @@ def submitLog(row, b):
     logs.write('\n')
     logs.close()
 
-
+#is hard refreshing by cleaning caches and opening given url
 def super_get(url):
     counterRef = 0
     counterSub = 0
@@ -50,9 +51,11 @@ def super_get(url):
         print('Hard Refresh')
     driver.get(url)
 
+#Selecting all selectable fields randomly
 def selectFill():
     elm = driver.find_elements_by_xpath("//div[@role='dropdown']")
     for i in range(1,len(elm)):
+        #Hear we checking is the field is optional or not, if not so we selecting
         if '(Optional)' not in elm[i].text:
             elm[i].click()
             time.sleep(2)
@@ -63,6 +66,7 @@ def selectFill():
                 print('Dropdown selected')
                 time.sleep(1)
 
+#Choose all radio buttons randomly
 def radioFill():
     elm = driver.find_elements_by_xpath("//input[@type='radio']")
     d = dict()
@@ -79,17 +83,20 @@ def radioFill():
         elm = d[i][t]
         el = elm.find_element_by_xpath('..').find_element_by_xpath('..').find_element_by_xpath('..').find_element_by_xpath('..')
         el = el.find_element_by_class_name('_1gJzwc_bJS')
+        #Here we checking is Optional or not, if not so we choose
         if '(Optional)' not in el.text:
             d[i][t].click()
             print('Radio button selected')
         time.sleep(1)
 
+#Chek mailing chechbox 
 def checkboxMailingFill():
     elm = driver.find_element_by_xpath("//input[@type='checkbox'][@value='mailing']")
     elm.click()
     print('Checkbox cheked')
 
 
+#Fill all text field with text 'sample' where is required
 def textFill():
     elm = driver.find_elements_by_xpath("//input[@type='text']")
     for i in range(len(elm)):
@@ -100,6 +107,7 @@ def textFill():
             time.sleep(1)
 
 
+#Fill all number fields where is required
 def numberFill():
     elm = driver.find_elements_by_xpath("//input[@type='number']")
     for i in range(len(elm)):
@@ -109,6 +117,7 @@ def numberFill():
             print('Number filled')
             time.sleep(1)
 
+#Fill all textarea fields with text 'sample' where is required
 def textAreaFill():
     elm = driver.find_elements_by_tag_name('textarea')
     for i in range(len(elm)):
@@ -116,6 +125,7 @@ def textAreaFill():
             elm[i].send_keys('sample')
             print('Textare filled')
 
+#Clicking the button List Now and getting result
 def submitAndGetResult(row):
     global counterSub
     elm = driver.find_element_by_xpath("//button[@type='submit'][@role='submitButton'][contains(text(), 'List now')]")
@@ -141,6 +151,7 @@ def submitAndGetResult(row):
 
     return res
 
+#Filling title, condition, price, descp fields 
 def fillFromCsv(title, condition, price, descp):
     try:
         em = driver.find_element_by_xpath("//*[contains(text(), 'Listing Title')]")
@@ -180,21 +191,22 @@ def fillFromCsv(title, condition, price, descp):
     print('Data from csv filled')
 
 
-
+#Main function of proccess uploading item
 def upload(category, category_child, categorychild, title, condition, price, descp, photo, row):
     global counterRef
     elm = driver.find_element_by_xpath("//input[@type='file']")
     elm.send_keys(photo)
     print("photo sended")
-
+    #Selecting category
     em = driver.find_elements_by_xpath("//*[contains(text(), 'Select a category')]")
     em[0].click()
     time.sleep(3)
-
+    
     if(counterRef>3):
         submitLog(row,False)
         return 'Failed to upload ' + title;
-
+    #Why I put (try,except)? because website have a bug, sometimes website is swithching to Chinesee language.
+    #And if we refresh it, will gives back in English. So hear I put counter, to refresh three times.
     try:
         em = driver.find_elements_by_xpath("//*[contains(text(), \""+category+"\")]")
         em[0].click()
@@ -235,7 +247,7 @@ def upload(category, category_child, categorychild, title, condition, price, des
     fillFromCsv(title, condition, price, descp)
     return submitAndGetResult(row)
 
-
+#Uploading cookie to authorize
 def init(cook):
     cookies = pickle.load(open(cook, "rb"))
     for cookie in cookies:
@@ -269,6 +281,7 @@ def init(cook):
 #driver.get("https://hk.carousell.com/sell")
 #pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
 
+#Here we sendig item values to function Upload, one by one
 def main(args):
     init(str(args[1]))
 
