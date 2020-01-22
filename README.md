@@ -44,7 +44,12 @@ How is everything going. So for example we have task, that script need open webs
 As you see we found element by name and click, so you wanna ask how to get name of button. It is easy just open the website facebook.com,
 and in the button `sign up` click right mouse, and there will be option `Inspect code` and select this. After you will able to see source  (html), in the right side. There will shaded [code](https://github.com/samakovuluk/honk/blob/master/Screenshot_8.png) wchich is source of button. In the shaded source will be parameter `name=websubmit`, so we now know that name of the button is `websubmit`.
 
-So in selenium there a lot of options to find elements, you can find elements by functions `find_element_by_css' 'find_element_by_class_name', 'find_element_by_xpath'.
+So in selenium there a lot of options to find elements, you can find elements by functions :
+`find_element_by_css' 
+'find_element_by_class_name'
+'find_element_by_xpath'.
+
+You can learn more about selenium [here](https://www.browserstack.com/guide/python-selenium-to-run-web-automation-test)
 
 ### Actions in the script
 Here main actions of the script, in source you can see code implemetation of action.
@@ -63,7 +68,8 @@ Here main actions of the script, in source you can see code implemetation of act
     * Wait 5 seconds
     * Write result in log file [source](https://github.com/samakovuluk/honk/blob/d6d942f5d803d3d897fdcefec7bc08bdd9e0b302/honk.py#L27)
     * Upload next item
-    
+ 
+ 
 
 
 
