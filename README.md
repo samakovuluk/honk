@@ -30,7 +30,7 @@ And it will automatically closed when you sucessfully authorized
 We need an automated script which will upload item independently.
 #### Solution
 Project working with library Selenium. As we know Selenium is s a free (open source) automated testing suite for web applications. And this tool I used for uploading items to hk.carousell.com. Selenium is perfect decision for our task. 
-So script doing step by step tasks: 
+So script doing step by step tasks. 
 #### What you need to know about Selenium
 Selenium able to do what the user can does on the site. Only needs to be configured correctly. 
 How is everything going. So for example we have task, that script need open website facebook.com click to button `sign up` with name `websubmit`.
@@ -41,6 +41,7 @@ How is everything going. So for example we have task, that script need open webs
    el = driver.find_element_by_name('websubmit')
    el.click()
 ```
+###### Attention do not forget to put full path of chromedriver.exe in `driver = webdriver.Chrome('{path}')`
 As you see we found element by name and click, so you wanna ask how to get name of button. It is easy just open the website facebook.com,
 and in the button `sign up` click right mouse, and there will be option `Inspect code` and select this. After you will able to see source  (html), in the right side. There will shaded [code](https://github.com/samakovuluk/honk/blob/master/Screenshot_8.png) wchich is source of button. In the shaded source will be parameter `name=websubmit`, so we now know that name of the button is `websubmit`.
 
