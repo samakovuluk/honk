@@ -71,6 +71,7 @@ Here main actions of the script, in source you can see code implemetation of act
     * Upload next item
 
 The project works very simply, there we getting elements by function `find_element_by_xpath` in xpath function we can indicate conditions for finding elements. Example we want get input checkbox with value mailing so we writing `elm = driver.find_element_by_xpath("//input[@type='checkbox'][@value='mailing']")`.  Now variable `elm` equal to checkbox element, so for click it just write `elm.click()`. Here is how our project works on most parts. 
+
  
 
 
