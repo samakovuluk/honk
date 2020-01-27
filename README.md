@@ -90,6 +90,7 @@ def selectFill():
                 time.sleep(1)
 ```
 
+Here we finding dropdown fields by xpath function `find_elements_by_xpath("//div[@role='dropdown']")` we go through elements. And each element we checking for required or not, `if '(Optional)' not in elm[i].text:` if text of element not contains text `(optional)` so we click `elm[i].click()` .
 
  
 
