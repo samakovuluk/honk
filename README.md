@@ -72,6 +72,25 @@ Here main actions of the script, in source you can see code implemetation of act
 
 The project works very simply, there we getting elements by function `find_element_by_xpath` in xpath function we can indicate conditions for finding elements. Example we want get input checkbox with value mailing so we writing `elm = driver.find_element_by_xpath("//input[@type='checkbox'][@value='mailing']")`.  Now variable `elm` equal to checkbox element, so for click it just write `elm.click()`. Here is how our project works on most parts. 
 
+So let's see one of action in project. We will take action which selecting randomly in dropdown fileds.
+
+```
+def selectFill():
+    elm = driver.find_elements_by_xpath("//div[@role='dropdown']")
+    for i in range(1,len(elm)):
+        #Hear we checking is the field is optional or not, if not so we selecting
+        if '(Optional)' not in elm[i].text:
+            elm[i].click()
+            time.sleep(2)
+            p = elm[i].find_element_by_xpath('parent::*')
+            elem = p.find_elements_by_class_name('_1H4f-PmiEr')
+            if len(elem)>0:
+                elem[random.randint(0,len(elem)-1)].click()
+                print('Dropdown selected')
+                time.sleep(1)
+```
+
+
  
 
 
