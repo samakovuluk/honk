@@ -23,7 +23,7 @@ time.sleep(1)
 
 
 #Writing result in LogFile, getting two parameters list and boolean.
-#list which is containg values of item, and boolean result of uploaded item 
+#list which is containg values of item, and boolean result of uploaded item
 def submitLog(row, b):
     logs = open('log.txt','a+')
     for i in row:
@@ -89,7 +89,7 @@ def radioFill():
             print('Radio button selected')
         time.sleep(1)
 
-#Chek mailing chechbox 
+#Chek mailing chechbox
 def checkboxMailingFill():
     elm = driver.find_element_by_xpath("//input[@type='checkbox'][@value='mailing']")
     elm.click()
@@ -151,7 +151,7 @@ def submitAndGetResult(row):
 
     return res
 
-#Filling title, condition, price, descp fields 
+#Filling title, condition, price, descp fields
 def fillFromCsv(title, condition, price, descp):
     try:
         em = driver.find_element_by_xpath("//*[contains(text(), 'Listing Title')]")
@@ -201,7 +201,7 @@ def upload(category, category_child, categorychild, title, condition, price, des
     em = driver.find_elements_by_xpath("//*[contains(text(), 'Select a category')]")
     em[0].click()
     time.sleep(3)
-    
+
     if(counterRef>3):
         submitLog(row,False)
         return 'Failed to upload ' + title;

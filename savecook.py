@@ -15,13 +15,13 @@ driver.get(url)
 
 while True:
     time.sleep(2)
-    try:
-        driver.find_element_by_xpath("//button[@type = 'button'][contains(text(), 'New User? Register')]");
-        driver.find_element_by_xpath("//button[@type = 'button'][contains(text(), '新用戶？註冊')]");
-        driver.find_element_by_xpath("//button[@type = 'button'][contains(text(), '新用戶？立即注册')]");
-    except:
-        time.sleep(3)
-        pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
-        break
+
+    if driver.find_elements_by_xpath("//button[@type = 'button'][contains(text(), 'New User? Register')]")==[]:
+        if driver.find_elements_by_xpath("//button[@type = 'button'][contains(text(), '新用戶？註冊')]")==[]:
+            if driver.find_elements_by_xpath("//button[@type = 'button'][contains(text(), '新用戶？立即注册')]")==[]:
+                time.sleep(3)
+                pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
+                break
+
 
 driver.quit()
