@@ -9,7 +9,7 @@ from datetime import datetime
 
 url = 'https://hk.carousell.com'
 
-driver = webdriver.Chrome('D:/Chromedriver_win32/chromedriver.exe')
+driver = webdriver.Chrome('chromedriver.exe')
 
 driver.get(url)
 
