@@ -9,7 +9,7 @@ from datetime import datetime
 
 url = 'https://hk.carousell.com'
 
-driver = webdriver.Chrome('chromedriver.exe')
+driver = webdriver.Chrome('D:/honk/chromedriver.exe')
 
 driver.get(url)
 
@@ -249,7 +249,7 @@ def upload(category, category_child, categorychild, title, condition, price, des
 
 #Uploading cookie to authorize
 def init(cook):
-    cookies = pickle.load(open(cook, "rb"))
+    cookies = pickle.load(open("cookies.pkl", "rb"))
     for cookie in cookies:
         driver.add_cookie(cookie)
     driver.get(url)
@@ -283,7 +283,9 @@ def init(cook):
 
 #Here we sendig item values to function Upload, one by one
 def main(args):
-    init(str(args[1]))
+    print(args)
+    print(args[0])
+    init(str(args[0]))
 
     with open(str(args[0]), 'r') as file:
         reader = csv.reader(file)
