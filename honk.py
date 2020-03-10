@@ -27,7 +27,7 @@ time.sleep(1)
 def submitLog(row, b):
     logs = open('log.txt','a+')
     for i in row:
-        logs.write(i)
+        logs.write(str(i.encode("utf-8")))
         logs.write(',')
     logs.write(str(datetime.now()))
     logs.write(',')
@@ -198,6 +198,7 @@ def upload(category, category_child, categorychild, title, condition, price, des
     elm.send_keys(photo)
     print("photo sended")
     #Selecting category
+
     em = driver.find_elements_by_xpath("//*[contains(text(), 'Select a category')]")
     em[0].click()
     time.sleep(3)
@@ -208,7 +209,8 @@ def upload(category, category_child, categorychild, title, condition, price, des
     #Why I put (try,except)? because website have a bug, sometimes website is swithching to Chinesee language.
     #And if we refresh it, will gives back in English. So hear I put counter, to refresh three times.
     try:
-        em = driver.find_elements_by_xpath("//*[contains(text(), \""+category+"\")]")
+        print(category.strip())
+        em = driver.find_elements_by_xpath("//*[contains(text(), \""+category.strip()+"\")]")
         em[0].click()
         print("selected category")
     except:
@@ -221,7 +223,7 @@ def upload(category, category_child, categorychild, title, condition, price, des
     try:
         if category_child!='':
             time.sleep(3)
-            em = driver.find_elements_by_xpath("//*[contains(text(), \""+category_child+"\")]")
+            em = driver.find_elements_by_xpath("//*[contains(text(), \""+category_child.strip()+"\")]")
             em[0].click()
             print("selected category child")
     except:
@@ -230,7 +232,7 @@ def upload(category, category_child, categorychild, title, condition, price, des
     time.sleep(3)
     try:
         if categorychild!='':
-            em = driver.find_elements_by_xpath("//*[contains(text(), \""+categorychild+"\")]")
+            em = driver.find_elements_by_xpath("//*[contains(text(), \""+categorychild.strip()+"\")]")
             em[0].click()
             print("selected c category child ",categorychild)
     except:
@@ -287,9 +289,11 @@ def main(args):
     print(args[0])
     init(str(args[0]))
 
-    with open(str(args[0]), 'r') as file:
+    with open(str(args[0]), 'r', encoding='utf-8') as file:
         reader = csv.reader(file)
+        counter = 0
         for row in reader:
+            print(counter," next item ")
             if("price" not in row):
                try:
                    upload(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row)
@@ -297,7 +301,7 @@ def main(args):
                    submitLog(row,False)
 
                super_get('https://hk.carousell.com/sell')
-
+            counter+=1
     driver.quit()
 
 
