@@ -166,3 +166,137 @@ b'\xef\xbb\xbfElectronics',b'Audio',b'',b'\xd1\x98e\xd0\x90W\xd1\x96\xd1\x88\xc2
 b'Electronics',b'Mobile Phones',b'',b'\xd1\x98e\xd0\x90W\xd1\x96\xd1\x88\xc2\xbb\xd1\x89Aberdeen Harbour Mansion\xd0\x92\xd1\x89\xd1\x96\xd0\xaf\xc2\xa4j\xc2\xb7H\xc2\xad\xc2\xbb\xd2\x91\xd0\xb4\xd2\x90J\xc2\xa4j\xe2\x84\x96D52/64\xd1\x91\xe2\x84\x96',b'New',b'38',b'\xd0\x95w\xd0\x84\xd0\xbf\xc2\xadP\xe2\x84\x96q 53159379 \xd0\x87\xd0\x91\xd0\x81\xd1\x8a \xd1\x98e\xd0\x90W\xc2\xa4W\xd1\x94\xd1\x84 \xc2\xbb\xd1\x89\xd1\x97\xd1\x8a\xc2\xa4\xd0\x9e\xc2\xa4W\xd1\x94\xd1\x84\xc2\xa4\xd0\xbb\xc2\xb6O\xd1\x96\xd1\x88\xc2\xbb\xd1\x89!\n\xd0\x95w\xd0\x84\xd0\xbfWHATSAPP \xc2\xacd\xd1\x91\xd0\xaf:\n+852 53159379\n\n',b'C:\\Users\\R580\\Desktop\\Carousell6\\JPEG\\bid38.jpg',2020-03-10 10:49:00.946745,Fail
 b'Electronics',b'Electronics & Gadgets - Others',b'',b'\xd1\x98e\xd0\x90W\xd1\x96\xd1\x88\xc2\xbb\xd1\x89Aberdeen Industrial Building\xc2\xad\xc2\xbb\xd2\x91\xd0\xb4\xd2\x90J\xc2\xa4u\xc2\xb7~\xc2\xa4j\xc2\xb7H\xc2\xad\xc2\xbb\xd2\x91\xd0\xb4\xd2\x90J\xc2\xa4j\xe2\x84\x96D236\xd1\x91\xe2\x84\x96',b'New',b'39',b'\xd0\x95w\xd0\x84\xd0\xbf\xc2\xadP\xe2\x84\x96q 53159379 \xd0\x87\xd0\x91\xd0\x81\xd1\x8a \xd1\x98e\xd0\x90W\xc2\xa4W\xd1\x94\xd1\x84 \xc2\xbb\xd1\x89\xd1\x97\xd1\x8a\xc2\xa4\xd0\x9e\xc2\xa4W\xd1\x94\xd1\x84\xc2\xa4\xd0\xbb\xc2\xb6O\xd1\x96\xd1\x88\xc2\xbb\xd1\x89!\n\xd0\x95w\xd0\x84\xd0\xbfWHATSAPP \xc2\xacd\xd1\x91\xd0\xaf:\n+852 53159379\n\n',b'C:\\Users\\R580\\Desktop\\Carousell6\\JPEG\\bid39.jpg',2020-03-10 10:49:05.440576,Fail
 b'Electronics',b'Computers & Tablets',b'',b'\xd1\x98e\xd0\x90W\xd1\x96\xd1\x88\xc2\xbb\xd1\x89Aberdeen Jockey Club Clinic\xc2\xad\xc2\xbb\xd2\x91\xd0\xb4\xd2\x90J\xd0\x91\xd0\x99\xc2\xb0\xd0\x81\xc2\xb7|\xc2\xa4\xd0\x90\xc2\xac\xd0\xbc\xc2\xb6E\xd0\x90\xd1\x88\xc2\xa9\xd0\xa2\xc2\xad\xc2\xbb\xd2\x91\xd0\xb4\xd2\x90J\xc2\xa4\xd1\x84\xc2\xb6\xd0\xbd\xe2\x84\x96D10\xd1\x91\xe2\x84\x96',b'New',b'40',b'\xd0\x95w\xd0\x84\xd0\xbf\xc2\xadP\xe2\x84\x96q 53159379 \xd0\x87\xd0\x91\xd0\x81\xd1\x8a \xd1\x98e\xd0\x90W\xc2\xa4W\xd1\x94\xd1\x84 \xc2\xbb\xd1\x89\xd1\x97\xd1\x8a\xc2\xa4\xd0\x9e\xc2\xa4W\xd1\x94\xd1\x84\xc2\xa4\xd0\xbb\xc2\xb6O\xd1\x96\xd1\x88\xc2\xbb\xd1\x89!\n\xd0\x95w\xd0\x84\xd0\xbfWHATSAPP \xc2\xacd\xd1\x91\xd0\xaf:\n+852 53159379\n\n',b'C:\\Users\\R580\\Desktop\\Carousell6\\JPEG\\bid40.jpg',2020-03-10 10:49:08.612535,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 19:59:54.109979,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 19:59:57.702797,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:00:01.611559,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:00:06.227902,Fail
+b'Electronics',b'Mobile & Tablet Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:00:09.842324,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:03:16.174327,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:03:18.952639,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:03:21.664998,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:03:23.797351,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:07:15.569486,Success
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:07:44.087231,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:07:50.676510,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:11:19.878908,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:11:48.210530,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:12:07.072858,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:12:29.085522,Fail
+b'Electronics',b'Mobile & Tablet Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:12:36.767205,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:13:56.827593,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:16:09.795042,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:16:16.581569,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:17:56.080627,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:21:48.438104,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:26:45.152968,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:28:16.538644,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:30:17.130839,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:31:27.991766,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:31:57.089512,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:32:15.506513,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:38:59.576108,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:39:42.762884,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:42:23.926022,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:42:28.957911,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:43:24.391309,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:45:30.015570,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:48:46.377485,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:49:15.617268,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:49:44.539996,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:50:05.806267,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:53:01.063691,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:53:07.369990,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:53:34.908165,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:53:56.621083,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:55:30.679072,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:55:37.867328,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 20:59:00.333000,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:03:04.678175,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:03:33.543030,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:03:52.023701,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:08:57.857667,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:09:26.420161,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:09:45.091179,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:10:06.529381,Fail
+b'Electronics',b'Mobile & Tablet Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:10:24.554905,Fail
+b'Electronics',b'Electronics & Gadgets - Others',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:10:30.145056,Fail
+b'Luxury',b'Bags & Wallets',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:10:47.137189,Fail
+b'Luxury',b'Apparel',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:11:04.536221,Fail
+b'Luxury',b'Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:11:22.489753,Fail
+b'Luxury',b'Watches',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:11:39.604022,Fail
+b'Cars',b'Cars for Sale',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:11:55.839609,Fail
+b'Cars',b'Vehicle Rentals',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:12:13.094332,Fail
+b'Home & Furniture',b'Home Others',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:12:35.470167,Fail
+b'Home & Furniture',b'Furniture',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:12:40.813633,Fail
+b'Home & Furniture',b'Gardening & Plants',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:12:58.087695,Fail
+b'Travel',b'Overseas Attractions',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:13:04.617729,Fail
+b'Travel',b'Flights',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:13:19.091442,Fail
+b'Travel',b'Car Rentals',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:13:24.482930,Fail
+b'Travel',b'Travel Essentials',b'Luggage',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:18:37.553781,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:19:06.571905,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:19:25.058151,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:19:38.311717,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:24:28.569984,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:24:35.403047,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:25:07.511459,Fail
+b'Electronics',b'Mobile & Tablet Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:25:14.552559,Fail
+b'Electronics',b'Electronics & Gadgets - Others',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:25:19.942382,Fail
+b'Luxury',b'Bags & Wallets',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:25:37.532360,Fail
+b'Luxury',b'Apparel',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:25:42.842199,Fail
+b'Luxury',b'Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:25:59.919533,Fail
+b'Luxury',b'Watches',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:26:05.911159,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:29:13.733627,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:29:20.156957,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:31:00.608914,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:33:05.607308,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:33:34.710522,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:34:07.888271,Fail
+b'Electronics',b'Mobile & Tablet Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:34:37.824677,Fail
+b'Electronics',b'Electronics & Gadgets - Others',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:34:44.680244,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:35:58.826922,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:36:26.876690,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:36:59.302661,Fail
+b'Electronics',b'Mobile & Tablet Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:37:29.045683,Fail
+b'Electronics',b'Electronics & Gadgets - Others',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:38:00.593215,Fail
+b'Luxury',b'Bags & Wallets',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:38:06.196174,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:40:41.220343,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:41:10.761272,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:41:43.325138,Fail
+b'Electronics',b'Mobile & Tablet Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:42:13.065711,Fail
+b'Electronics',b'Electronics & Gadgets - Others',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:42:44.361415,Fail
+b'Luxury',b'Bags & Wallets',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:43:13.308917,Fail
+b'Luxury',b'Apparel',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:43:41.128859,Fail
+b'Luxury',b'Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:44:09.011785,Fail
+b'Luxury',b'Watches',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:44:15.543320,Fail
+b'Travel',b'Travel Essentials',b'Outdoor & Camping',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:46:56.913062,Fail
+b'Travel',b'Travel Essentials',b'Travel Accessories',b'Iphone 13',b'Used',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:47:03.903226,Fail
+b'Electronics',b'Audio',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:47:40.185273,Fail
+b'Electronics',b'Mobile & Tablet Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:48:10.451050,Fail
+b'Electronics',b'Electronics & Gadgets - Others',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:48:42.061217,Fail
+b'Luxury',b'Bags & Wallets',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:48:47.523680,Fail
+b'Luxury',b'Apparel',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:49:17.731032,Fail
+b'Luxury',b'Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:49:45.341212,Fail
+b'Luxury',b'Watches',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:49:52.235258,Fail
+b'Cars',b'Cars for Sale',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:50:09.266860,Fail
+b'Cars',b'Vehicle Rentals',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:50:26.248912,Fail
+b'Home & Furniture',b'Home Others',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:50:57.108035,Fail
+b'Home & Furniture',b'Furniture',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:51:02.352525,Fail
+b'Home & Furniture',b'Gardening & Plants',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:51:31.174308,Fail
+b'Travel',b'Overseas Attractions',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:51:53.557116,Fail
+b'Travel',b'Flights',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:52:09.991442,Fail
+b'Travel',b'Car Rentals',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:52:15.454641,Fail
+b"Women's Fashion",b"Women's Bags & Wallets",b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:52:22.337308,Fail
+b"Women's Fashion",b"Women's Shoes",b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:52:30.482504,Fail
+b"Women's Fashion",b"Women's Tops",b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:53:03.843493,Fail
+b"Women's Fashion",b"Women's Bottoms",b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:53:35.106031,Fail
+b"Women's Fashion",b"Women's Dresses",b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:54:06.219811,Fail
+b"Women's Fashion",b"Women's Accessories",b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:54:33.588234,Fail
+b'Video Gaming',b'Gaming Accessories',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:55:03.464144,Fail
+b'Video Gaming',b'Video Game Consoles',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:55:09.014893,Fail
+b'Video Gaming',b'Video Games',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:55:41.318284,Fail
+b'Health & Beauty',b'Hair, Bath & Body',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:56:09.604552,Fail
+b'Health & Beauty',b'Skin Care',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:56:37.711309,Fail
+b'Health & Beauty',b'Makeup',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:56:44.297167,Fail
+b'Health & Beauty',b"Men's Grooming",b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:57:13.951836,Fail
+b'Health & Beauty',b'Perfumes, Nail Care & Others',b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:57:43.152569,Fail
+b"Men's Fashion",b"Men's Bags & Wallets",b'',b'Iphone 13',b'New',b'4000',b'Is the test hi fff',b'D:/wallpaper.jpg',2020-04-19 21:57:58.770121,Fail

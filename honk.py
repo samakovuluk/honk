@@ -8,8 +8,10 @@ from datetime import datetime
 
 
 url = 'https://hk.carousell.com'
+options = webdriver.ChromeOptions()
+options.add_argument("--disable-popup-blocking");
 
-driver = webdriver.Chrome('chromedriver.exe')
+driver = webdriver.Chrome('chromedriver.exe', options=options)
 
 driver.get(url)
 
@@ -19,6 +21,7 @@ counterFill = 0
 
 driver.get('https://hk.carousell.com/sell')
 driver.execute_script('window.localStorage.clear();')
+driver.execute_script("window.onbeforeunload = function() {};")
 time.sleep(1)
 
 
@@ -43,20 +46,43 @@ def super_get(url):
     counterRef = 0
     counterSub = 0
     counterFill = 0
-    driver.execute_script('window.localStorage.clear();')
-    driver.refresh();
     try:
-        driver.switch_to_alert().accept()
+            driver.execute_script("window.onbeforeunload = function() {};")
+            alert = driver.switch_to.alert
+            alert.accept()
     except:
-        print('Hard Refresh')
+            print('fail')
+    
+    try:
+            driver.execute_script('window.localStorage.clear();')
+            alert = driver.switch_to.alert
+            alert.accept()
+    except:
+            print('fail')
+    try:
+            alert = driver.switch_to.alert
+            alert.accept()
+    except:
+            print('fail')
+    try:
+        driver.refresh()
+        driver.execute_script("window.onbeforeunload = function() {};")
+    except:
+        try:
+            alert = driver.switch_to.alert
+            alert.accept()
+        except:
+            print('fail')
     driver.get(url)
+    driver.execute_script("window.onbeforeunload = function() {};")
+    
 
 #Selecting all selectable fields randomly
 def selectFill():
     elm = driver.find_elements_by_xpath("//div[@role='dropdown']")
     for i in range(1,len(elm)):
         #Hear we checking is the field is optional or not, if not so we selecting
-        if '(Optional)' not in elm[i].text:
+        if '(Optional)' not in elm[i].text and 'Add location' not in elm[i].text:
             elm[i].click()
             time.sleep(2)
             p = elm[i].find_element_by_xpath('parent::*')
@@ -102,7 +128,10 @@ def textFill():
     for i in range(len(elm)):
         el = elm[i].find_element_by_xpath('..')
         if '(Optional)' not in el.text and 'Listing Title' not in el.text:
-            elm[i].send_keys('sample')
+            try:
+                elm[i].send_keys('sample')
+            except:
+                print('ch')
             print('Text filled')
             time.sleep(1)
 
@@ -240,12 +269,17 @@ def upload(category, category_child, categorychild, title, condition, price, des
 
     time.sleep(3)
 
-
+    print("---select-fill")
     selectFill()
+    print("---radio-fill")
     radioFill()
+    print("--text-fill")
     textFill()
+    print("--number-fill")
     numberFill()
+    print("--checkbox-fill")
     checkboxMailingFill()
+    print("--csv-fill")
     fillFromCsv(title, condition, price, descp)
     return submitAndGetResult(row)
 
@@ -289,6 +323,8 @@ def main(args):
     print(args[0])
     init(str(args[0]))
 
+
+#todo change to args
     with open(str(args[0]), 'r', encoding='utf-8') as file:
         reader = csv.reader(file)
         counter = 0
