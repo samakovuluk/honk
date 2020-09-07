@@ -211,8 +211,7 @@ def fillFromCsv(title, condition, price, descp):
     time.sleep(2)
 
     try:
-        desc = driver.find_element_by_xpath("//*[contains(text(), 'description')]").find_element_by_xpath('..')
-        desc = desc.find_element_by_tag_name('textarea')
+        desc = driver.find_element_by_xpath("//textarea[@placeholder='Describe what you are selling and include any details a buyer might be interested in. People love items with stories!']")
         desc.send_keys(descp)
     except:
         print('description not filled')
@@ -290,7 +289,7 @@ def init(cook):
         driver.add_cookie(cookie)
     driver.get(url)
     try:
-        em = driver.find_element_by_xpath("//button[contains(text(), 'New User? Register')]")
+        em = driver.find_element_by_xpath("//button[contains(text(), 'Register')]")
         if(len(em)>=1):
             print('Needs to update cookie')
             return;
