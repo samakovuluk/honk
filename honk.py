@@ -5,21 +5,29 @@ import pickle
 import random
 import sys
 from datetime import datetime
-
-
-url = 'https://hk.carousell.com'
+import requests
+import string
+import random
+from datetime import datetime
+import os
+from selenium.webdriver.common.keys import Keys
+now = datetime.now() # current date and time
+import fileinput
+url = 'https://www.carousell.sg'
 options = webdriver.ChromeOptions()
-options.add_argument("--disable-popup-blocking");
+options.add_argument("--disable-popup-blocking")
+options.add_argument("--disable-notifications")
 
-driver = webdriver.Chrome('chromedriver.exe', options=options)
+driver = webdriver.Chrome(options=options)
 
 driver.get(url)
 
 counterRef = 0
 counterSub = 0
+counter = 0
 counterFill = 0
 
-driver.get('https://hk.carousell.com/sell')
+driver.get('https://www.carousell.sg/sell')
 driver.execute_script('window.localStorage.clear();')
 driver.execute_script("window.onbeforeunload = function() {};")
 time.sleep(1)
@@ -45,36 +53,28 @@ def submitLog(row, b):
 def super_get(url):
     counterRef = 0
     counterSub = 0
+    counter = 0
     counterFill = 0
+    driver.execute_script("window.alert = null;")
+    driver.execute_script("Window.prototype.alert = null;")
+    driver.refresh()
+    time.sleep(3)
     try:
-            driver.execute_script("window.onbeforeunload = function() {};")
-            alert = driver.switch_to.alert
-            alert.accept()
+        alert_obj = driver.switch_to.alert
+        time.sleep(1)
+        alert_obj.accept()
+        alert_obj.dismiss()
+        time.sleep(1)
+        driver.execute_script("window.alert = null;")
+        driver.execute_script("Window.prototype.alert = null;")
+        webdriver.ActionChains(driver).send_keys(Keys.RETURN).perform()
     except:
-            print('fail')
-    
-    try:
-            driver.execute_script('window.localStorage.clear();')
-            alert = driver.switch_to.alert
-            alert.accept()
-    except:
-            print('fail')
-    try:
-            alert = driver.switch_to.alert
-            alert.accept()
-    except:
-            print('fail')
-    try:
-        driver.refresh()
-        driver.execute_script("window.onbeforeunload = function() {};")
-    except:
-        try:
-            alert = driver.switch_to.alert
-            alert.accept()
-        except:
-            print('fail')
+        print('s')
+    time.sleep(1)
     driver.get(url)
-    driver.execute_script("window.onbeforeunload = function() {};")
+    time.sleep(2)
+    webdriver.ActionChains(driver).send_keys(Keys.RETURN).perform()
+    
     
 
 #Selecting all selectable fields randomly
@@ -91,6 +91,65 @@ def selectFill():
                 elem[random.randint(0,len(elem)-1)].click()
                 print('Dropdown selected')
                 time.sleep(1)
+def selectBrand():
+    try: 
+        em = driver.find_elements_by_xpath("//span[contains(text(), 'Brand')]")
+        em[0].click()
+        time.sleep(2)
+        em = driver.find_elements_by_xpath("//div[@data-testid]")
+        em[-1].click()
+    except:
+        try:
+            em = driver.find_elements_by_xpath("//input[@aria-label='Brand'][@name='field_brand']")
+            em[0].send_keys('As listed')
+        except:
+            em = driver.find_elements_by_xpath("//span[contains(text(), 'Brand')]")
+            em = em.parent.find_elements_by_xpath("//p[contains(text(), 'Others')]")
+            em[0].click()
+
+
+
+def dealMethod():
+    em = driver.find_elements_by_xpath("//p[contains(text(), 'Delivery')]")
+    em[0].click()
+    time.sleep(1)
+    em = driver.find_elements_by_xpath("//p[contains(text(), 'Custom courier')]")
+    em[0].click()
+    time.sleep(1)
+    em = driver.find_elements_by_xpath("//div[@data-testid='delivery_period_dropdown'][@role='dropdown']")
+    em[0].click()
+    time.sleep(1)
+    em = driver.find_elements_by_xpath("//div[@data-testid='5']")
+    em[0].click()
+    time.sleep(1)
+    em = driver.find_elements_by_xpath("//input[@name='shipping_custom_delivery']")
+    em[0].send_keys(5)
+    time.sleep(1)
+
+def typeD():
+    try:
+        typ = driver.find_elements_by_xpath("//span[contains(text(), 'Type')]")[0]
+        typ.click()
+        time.sleep(2)
+        em = typ.find_elements_by_xpath("//div[@data-testid]")
+        em[-1].click()
+    except:
+        typ = driver.find_elements_by_xpath("//p[contains(text(), 'Type')]")[0]
+        em = typ.parent.find_elements_by_xpath("//p[contains(text(), 'Others')]")
+        em[0].click()
+
+def ageRange():
+    typ = driver.find_elements_by_xpath("//span[contains(text(), 'Age Range')]")[0]
+    typ.click()
+    em = typ.find_elements_by_xpath("//div[@data-testid]")
+    em[-1].click()
+    typ.click()
+    
+
+
+
+
+    
 
 #Choose all radio buttons randomly
 def radioFill():
@@ -146,6 +205,7 @@ def numberFill():
             print('Number filled')
             time.sleep(1)
 
+
 #Fill all textarea fields with text 'sample' where is required
 def textAreaFill():
     elm = driver.find_elements_by_tag_name('textarea')
@@ -157,28 +217,29 @@ def textAreaFill():
 #Clicking the button List Now and getting result
 def submitAndGetResult(row):
     global counterSub
+    global counter
     elm = driver.find_element_by_xpath("//button[@type='submit'][@role='submitButton'][contains(text(), 'List now')]")
     elm.submit()
     print('Submitting')
     time.sleep(5)
     try:
         res = driver.find_element_by_class_name('_2_WIPmzf97')
+        res = res.text
+        if 'Successfully listed' in res:
+            submitLog(row,True)
+        else:
+            submitLog(row,False)
     except:
         counter+=1
         if(counter>3):
             submitLog(row,False)
             return
-        else:
-            submitAndGetResult(row)
+       # else:
+        #    submitAndGetResult(row)
     counterSub=0
-    res = res.text
 
-    if 'Successfully listed' in res:
-        submitLog(row,True)
-    else:
-        submitLog(row,False)
 
-    return res
+    return
 
 #Filling title, condition, price, descp fields
 def fillFromCsv(title, condition, price, descp):
@@ -200,11 +261,8 @@ def fillFromCsv(title, condition, price, descp):
     time.sleep(2)
 
     try:
-        pr = driver.find_elements_by_xpath("//input[@type='number']");
-        for i in range(len(pr)):
-            if 'Price' in pr[i].find_element_by_xpath('..').text:
-                    print(pr[i].find_element_by_xpath('..').text)
-                    pr[i].send_keys(price)
+        pr = driver.find_elements_by_xpath("//input[@type='number'][@name='field_price']");
+        pr[0].send_keys(price)
     except:
         print('Price not filled')
 
@@ -218,13 +276,33 @@ def fillFromCsv(title, condition, price, descp):
 
     print('Data from csv filled')
 
+def downloadFile(photo):
+    st = ''.join(random.choices(string.ascii_lowercase, k=5))
+    URL = photo
+    picture_req = requests.get(URL)
+    if picture_req.status_code == 200:
+        with open('data/'+st+".jpg", 'wb') as f:
+            f.write(picture_req.content)
+            return 'data/'+st+".jpg"
+    return ''
+
+def uploadPhoto(urls):
+    photos = urls.split(";;;")
+    for photo in photos:
+        if(photo != ''):
+            print(photo)
+            elm = driver.find_element_by_xpath("//input[@type='file']")
+            st = os.getcwd() + '/'+ downloadFile(photo)
+            print(st)
+            elm.send_keys(st)
+            print("photo sended")
+            time.sleep(1)
+
 
 #Main function of proccess uploading item
-def upload(category, category_child, categorychild, title, condition, price, descp, photo, row):
+def upload(category, title, condition, price, descp, photo, row):
     global counterRef
-    elm = driver.find_element_by_xpath("//input[@type='file']")
-    elm.send_keys(photo)
-    print("photo sended")
+    uploadPhoto(photo)
     #Selecting category
 
     em = driver.find_elements_by_xpath("//*[contains(text(), 'Select a category')]")
@@ -238,33 +316,21 @@ def upload(category, category_child, categorychild, title, condition, price, des
     #And if we refresh it, will gives back in English. So hear I put counter, to refresh three times.
     try:
         print(category.strip())
-        em = driver.find_elements_by_xpath("//*[contains(text(), \""+category.strip()+"\")]")
+        em = driver.find_elements_by_xpath("//input")
+        em[1].send_keys(category.strip())
+        time.sleep(3)
+        em = driver.find_elements_by_xpath("//div[.//div[.//div[.//input]]]")
+        em = em[6].find_elements_by_xpath(".//div[.//div[.//span]]")
         em[0].click()
         print("selected category")
-    except:
-        driver.get('https://hk.carousell.com/sell')
+        
+    except: 
+        print("error selected category")
+        driver.get('https://www.carousell.sg/sell')
         upload(category, category_child, categorychild, title, condition, price, descp, photo,row)
         counterRef+=1
 
     counterRef = 0
-
-    try:
-        if category_child!='':
-            time.sleep(3)
-            em = driver.find_elements_by_xpath("//*[contains(text(), \""+category_child.strip()+"\")]")
-            em[0].click()
-            print("selected category child")
-    except:
-        print('no category child')
-
-    time.sleep(3)
-    try:
-        if categorychild!='':
-            em = driver.find_elements_by_xpath("//*[contains(text(), \""+categorychild.strip()+"\")]")
-            em[0].click()
-            print("selected c category child ",categorychild)
-    except:
-        print('not third category')
 
     time.sleep(3)
 
@@ -273,12 +339,40 @@ def upload(category, category_child, categorychild, title, condition, price, des
     print("---radio-fill")
     radioFill()
     print("--text-fill")
-    textFill()
+    #textFill()
     print("--number-fill")
-    numberFill()
+    #numberFill()
+    print("--number-fill")
+    #numberFill()
+
+
     print("--checkbox-fill")
-    checkboxMailingFill()
+    #checkboxMailingFill()
+
+    print("--selectBrand-fill")
+    try:
+        selectBrand()
+    except:
+        print('error brand')
+
+    print("--typeD-fill")
+    try:
+        typeD()
+    except:
+        print('error typeD')
+
+    print("--typeD-fill")
+    try:
+        ageRange()
+    except:
+        print('error ageRange')
+
+    print("--dealMethod-fill")
+    dealMethod()
+
     print("--csv-fill")
+
+
     fillFromCsv(title, condition, price, descp)
     return submitAndGetResult(row)
 
@@ -296,11 +390,6 @@ def init(cook):
     except:
         print('Started')
     time.sleep(1)
-    em = driver.find_element_by_class_name('_3j4GRV18q8')
-    ep = em.find_element_by_xpath("//option[contains(text(), 'English')]")
-    em.click()
-    time.sleep(1)
-    ep.click()
     driver.get(url+'/sell')
 
 
@@ -320,27 +409,46 @@ def init(cook):
 def main(args):
     print(args)
     print(args[0])
-    init(str(args[0]))
+    init(str(args[0])) 
+    reader = csv.reader(open(str(args[0]), 'r', encoding='utf-8'))
+    rr = list(reader)
+    counter = 0
+    for i in rr:
+        print(counter," next item ")
+        row = i[0].split(';')
+        if("Pre Title" not in row):
+            row[-1] = now.strftime("%m/%d/%Y, %H:%M:%S")
+            try:
+                print(row)
+                images = row[5] + ';;;' + row[6] + ';;;' + row[7] + ';;;' + row[8] + ';;;' + row[9] + ';;;' + row[10] + ';;;' + row[11]  + ';;;'+ row[12]
+                category = row[-4]
+                title = row[0] + '\n' + row[1]
+                condition = 'Brand new'
+                price = row[2]
+                descp = row[3] + '\n' + row[4]
+                roww = [category, title, condition, price, descp, images]
+                upload(category, title, condition, price, descp, images, roww)
+                row[-3] = 'Success'
+                ##upload(row[-4],row[0] + '\n' + row[1],'Brand new',row[2],row[3] + '\n' + row[4],images,row)
+            except:
+                traceback.print_exception(*sys.exc_info())
+                submitLog(row,False)
+                row[-3] = 'Error'
+        super_get('https://www.carousell.sg/sell')
+        i[0] = (';'.join(row))
+        counter+=1
+        writer = csv.writer(open(str(args[0]), 'w'))
+        writer.writerows(rr)
+       
+      
 
+    
 
-#todo change to args
-    with open(str(args[0]), 'r', encoding='utf-8') as file:
-        reader = csv.reader(file)
-        counter = 0
-        for row in reader:
-            print(counter," next item ")
-            if("price" not in row):
-               try:
-                   upload(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row)
-               except:
-                   submitLog(row,False)
-
-               super_get('https://hk.carousell.com/sell')
-            counter+=1
-    driver.quit()
+    driver.close()
 
 
 
 
 if __name__ == "__main__":
     main(sys.argv[1:])
+

@@ -7,9 +7,9 @@ import sys
 from datetime import datetime
 
 
-url = 'https://hk.carousell.com'
+url = 'https://www.carousell.sg'
 
-driver = webdriver.Chrome('C:\\Users\\Ulukbek\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe')
+driver = webdriver.Chrome()
 
 driver.get(url)
 
