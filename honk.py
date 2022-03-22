@@ -7,6 +7,8 @@ import sys
 from datetime import datetime
 import requests
 import string
+import traceback
+import sys
 import random
 from datetime import datetime
 import os
@@ -133,10 +135,12 @@ def typeD():
         time.sleep(2)
         em = typ.find_elements_by_xpath("//div[@data-testid]")
         em[-1].click()
+        driver.find_elements_by_xpath("//h2[contains(text(), 'payment methods')]")[0].click()
     except:
         typ = driver.find_elements_by_xpath("//p[contains(text(), 'Type')]")[0]
         em = typ.parent.find_elements_by_xpath("//p[contains(text(), 'Others')]")
         em[0].click()
+        typ.click()
 
 def ageRange():
     typ = driver.find_elements_by_xpath("//span[contains(text(), 'Age Range')]")[0]
@@ -161,7 +165,6 @@ def radioFill():
             d[elm[i].get_attribute('name')].append(elm[i])
         else:
             d[elm[i].get_attribute('name')].append(elm[i])
-
     for i in d:
         print(len(d[i]))
         t = random.randint(0,len(d[i])-1)
@@ -221,25 +224,16 @@ def submitAndGetResult(row):
     elm = driver.find_element_by_xpath("//button[@type='submit'][@role='submitButton'][contains(text(), 'List now')]")
     elm.submit()
     print('Submitting')
-    time.sleep(5)
+    time.sleep(10)
     try:
-        res = driver.find_element_by_class_name('_2_WIPmzf97')
-        res = res.text
-        if 'Successfully listed' in res:
-            submitLog(row,True)
-        else:
-            submitLog(row,False)
+        em = driver.find_element_by_xpath("//p[contains(text(), 'Similar to your existing listing')]")
+        return 'Similar'
     except:
-        counter+=1
-        if(counter>3):
-            submitLog(row,False)
-            return
-       # else:
-        #    submitAndGetResult(row)
+        em = driver.find_element_by_xpath("//p[contains(text(), 'Successfully listed')]")
+        return 'Success'
     counterSub=0
 
-
-    return
+    return 'Error'
 
 #Filling title, condition, price, descp fields
 def fillFromCsv(title, condition, price, descp):
@@ -251,7 +245,6 @@ def fillFromCsv(title, condition, price, descp):
         print('Title not filled')
 
     time.sleep(2)
-
     try:
         cond = driver.find_element_by_xpath("//*[contains(text(), '"+condition+"')]")
         cond.click()
@@ -259,21 +252,17 @@ def fillFromCsv(title, condition, price, descp):
         print('Condition not flled')
 
     time.sleep(2)
-
     try:
         pr = driver.find_elements_by_xpath("//input[@type='number'][@name='field_price']");
         pr[0].send_keys(price)
     except:
         print('Price not filled')
-
     time.sleep(2)
-
     try:
         desc = driver.find_element_by_xpath("//textarea[@placeholder='Describe what you are selling and include any details a buyer might be interested in. People love items with stories!']")
         desc.send_keys(descp)
     except:
         print('description not filled')
-
     print('Data from csv filled')
 
 def downloadFile(photo):
@@ -317,14 +306,17 @@ def upload(category, title, condition, price, descp, photo, row):
     try:
         print(category.strip())
         em = driver.find_elements_by_xpath("//input")
-        em[1].send_keys(category.strip())
-        time.sleep(3)
+        em[1].send_keys(category)
+        time.sleep(5)
         em = driver.find_elements_by_xpath("//div[.//div[.//div[.//input]]]")
         em = em[6].find_elements_by_xpath(".//div[.//div[.//span]]")
+        time.sleep(1)
         em[0].click()
+        time.sleep(2)
         print("selected category")
         
     except: 
+        traceback.print_exception(*sys.exc_info())
         print("error selected category")
         driver.get('https://www.carousell.sg/sell')
         upload(category, category_child, categorychild, title, condition, price, descp, photo,row)
@@ -410,7 +402,7 @@ def main(args):
     print(args)
     print(args[0])
     init(str(args[0])) 
-    reader = csv.reader(open(str(args[0]), 'r', encoding='utf-8'))
+    reader = csv.reader(open(str(args[0]), 'r', encoding='utf-8'), delimiter='^')
     rr = list(reader)
     counter = 0
     for i in rr:
@@ -427,8 +419,8 @@ def main(args):
                 price = row[2]
                 descp = row[3] + '\n' + row[4]
                 roww = [category, title, condition, price, descp, images]
-                upload(category, title, condition, price, descp, images, roww)
-                row[-3] = 'Success'
+                res = upload(category, title, condition, price, descp, images, roww)
+                row[-3] = res
                 ##upload(row[-4],row[0] + '\n' + row[1],'Brand new',row[2],row[3] + '\n' + row[4],images,row)
             except:
                 traceback.print_exception(*sys.exc_info())
