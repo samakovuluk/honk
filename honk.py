@@ -7,9 +7,11 @@ import sys
 from datetime import datetime
 import requests
 import string
+from bs4 import BeautifulSoup
 import traceback
 import sys
 import random
+import openpyxl
 from datetime import datetime
 import os
 from selenium.webdriver.common.keys import Keys
@@ -24,6 +26,7 @@ driver = webdriver.Chrome(options=options)
 
 driver.get(url)
 
+indexG = 0
 counterRef = 0
 counterSub = 0
 counter = 0
@@ -227,9 +230,19 @@ def submitAndGetResult(row):
     time.sleep(10)
     try:
         em = driver.find_element_by_xpath("//p[contains(text(), 'Similar to your existing listing')]")
+        sheet[f"AB{indexG}"] = 'Duplicate'
         return 'Similar'
     except:
         em = driver.find_element_by_xpath("//p[contains(text(), 'Successfully listed')]")
+        listing_url = ''
+        tmp = BeautifulSoup(driver.page_source, "lxml").find_all('a', href=True)
+        for t in tmp:
+            if t.span and 'View listing' in t.span.text:
+                sheet[f"AB{indexG}"] = 'Listed'
+                listing_url = 'https://www.carousell.sg' + t['href']
+                sheet[f"AC{indexG}"] = listing_url
+                break
+
         return 'Success'
     counterSub=0
 
@@ -384,6 +397,13 @@ def init(cook):
     time.sleep(1)
     driver.get(url+'/sell')
 
+def convertToStr(val):
+    try:
+        if(val!=None):
+            return str(val)
+    except:
+        return ""
+    return ""
 
 
 #login = driver.find_elements_by_xpath("//*[contains(text(), 'Login')]")
@@ -399,43 +419,44 @@ def init(cook):
 
 #Here we sendig item values to function Upload, one by one
 def main(args):
+    global book
+    global sheet
+    global indexG
     print(args)
     print(args[0])
-    init(str(args[0])) 
-    reader = csv.reader(open(str(args[0]), 'r', encoding='utf-8'), delimiter='^')
-    rr = list(reader)
+    init(str(args[0]))
+    book = openpyxl.load_workbook(str(args[0]))
+    sheet = book.active
     counter = 0
-    for i in rr:
+    for index in range(2, 100000000):
+        indexG = index
         print(counter," next item ")
-        row = i[0].split(';')
-        if("Pre Title" not in row):
-            row[-1] = now.strftime("%m/%d/%Y, %H:%M:%S")
-            try:
-                print(row)
-                images = row[5] + ';;;' + row[6] + ';;;' + row[7] + ';;;' + row[8] + ';;;' + row[9] + ';;;' + row[10] + ';;;' + row[11]  + ';;;'+ row[12]
-                category = row[-4]
-                title = row[0] + '\n' + row[1]
-                condition = 'Brand new'
-                price = row[2]
-                descp = row[3] + '\n' + row[4]
-                roww = [category, title, condition, price, descp, images]
-                res = upload(category, title, condition, price, descp, images, roww)
-                row[-3] = res
-                ##upload(row[-4],row[0] + '\n' + row[1],'Brand new',row[2],row[3] + '\n' + row[4],images,row)
-            except:
-                traceback.print_exception(*sys.exc_info())
-                submitLog(row,False)
-                row[-3] = 'Error'
+        if(sheet[f"D{index}"].value == None):
+            break
+
+        sheet[f"AD{index}"].value = now.strftime("%m/%d/%Y, %H:%M:%S")
+        try:
+            images = convertToStr(sheet[f"I{index}"].value) + ';;;' + convertToStr(sheet[f"J{index}"].value) + ';;;' + convertToStr(sheet[f"K{index}"].value) + ';;;'
+            images += convertToStr(sheet[f"L{index}"].value) + ';;;' + convertToStr(sheet[f"M{index}"].value) + ';;;' + convertToStr(sheet[f"N{index}"].value)
+            images += ';;;' + convertToStr(sheet[f"O{index}"].value)  + ';;;'+ convertToStr(sheet[f"P{index}"].value)
+
+            category = sheet[f"AA{index}"].value
+            title = convertToStr(sheet[f"D{index}"].value) + ' ' + convertToStr(sheet[f"E{index}"].value)
+            condition = 'Brand new'
+            price = sheet[f"F{index}"].value
+            descp = convertToStr(sheet[f"G{index}"].value) + '\n' + convertToStr(sheet[f"H{index}"].value)
+            roww = [category, title, condition, price, descp, images]
+            print(roww)
+            res = upload(category, title, condition, price, descp, images, roww)       
+        except:
+            sheet[f"AB{index}"] = 'Error'
+            traceback.print_exception(*sys.exc_info())
+           
+        book.save(str(args[0]))
         super_get('https://www.carousell.sg/sell')
-        i[0] = (';'.join(row))
+
         counter+=1
-        writer = csv.writer(open(str(args[0]), 'w'))
-        writer.writerows(rr)
-       
-      
-
-    
-
+     
     driver.close()
 
 
