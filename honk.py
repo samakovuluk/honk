@@ -19,6 +19,7 @@ now = datetime.now() # current date and time
 import fileinput
 url = 'https://www.carousell.sg'
 options = webdriver.ChromeOptions()
+options.add_experimental_option('w3c', True)
 options.add_argument("--disable-popup-blocking")
 options.add_argument("--disable-notifications")
 
@@ -72,13 +73,13 @@ def super_get(url):
         time.sleep(1)
         driver.execute_script("window.alert = null;")
         driver.execute_script("Window.prototype.alert = null;")
-        webdriver.ActionChains(driver).send_keys(Keys.RETURN).perform()
+
     except:
         print('s')
     time.sleep(1)
     driver.get(url)
     time.sleep(2)
-    webdriver.ActionChains(driver).send_keys(Keys.RETURN).perform()
+
     
     
 
@@ -283,9 +284,9 @@ def downloadFile(photo):
     URL = photo
     picture_req = requests.get(URL)
     if picture_req.status_code == 200:
-        with open('data/'+st+".jpg", 'wb') as f:
+        with open('data\\'+st+".jpg", 'wb') as f:
             f.write(picture_req.content)
-            return 'data/'+st+".jpg"
+            return 'data\\'+st+".jpg"
     return ''
 
 def uploadPhoto(urls):
@@ -294,7 +295,7 @@ def uploadPhoto(urls):
         if(photo != ''):
             print(photo)
             elm = driver.find_element_by_xpath("//input[@type='file']")
-            st = os.getcwd() + '/'+ downloadFile(photo)
+            st = os.getcwd() + '\\'+ downloadFile(photo)
             print(st)
             elm.send_keys(st)
             print("photo sended")
