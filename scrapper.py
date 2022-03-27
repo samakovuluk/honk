@@ -85,8 +85,8 @@ for index in range(2,10000000):
 
 args = sys.argv[1:]
 
-link = args[0]
-amount = args[1]
+link = input("please enter url: ")
+amount = int(input("please enter number of product: "))
 username = link.split('/u/')[1].strip('/')
 print(username)
 try:
