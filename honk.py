@@ -17,7 +17,7 @@ import os
 from selenium.webdriver.common.keys import Keys
 now = datetime.now() # current date and time
 import fileinput
-rand = 1
+rand = int(input("please enter number for delay: "))
 url = 'https://www.carousell.sg'
 options = webdriver.ChromeOptions()
 options.add_experimental_option('w3c', True)
@@ -422,10 +422,8 @@ def main(args):
     global book
     global sheet
     global indexG
-    print(args)
-    print(args[0])
-    init(str(args[0]))
-    rand = int(args[0])
+  
+    init('')
     book = openpyxl.load_workbook('sample.xlsx')
     sheet = book.active
     counter = 0
