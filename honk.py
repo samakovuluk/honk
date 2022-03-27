@@ -17,7 +17,7 @@ import os
 from selenium.webdriver.common.keys import Keys
 now = datetime.now() # current date and time
 import fileinput
-rand = int(input("please enter number for delay: "))
+rand = int(input("please type number for delay: "))
 url = 'https://www.carousell.sg'
 options = webdriver.ChromeOptions()
 options.add_experimental_option('w3c', True)
@@ -108,8 +108,8 @@ def selectBrand():
             em = driver.find_elements_by_xpath("//input[@aria-label='Brand'][@name='field_brand']")
             em[0].send_keys('As listed')
         except:
-            em = driver.find_elements_by_xpath("//span[contains(text(), 'Brand')]")
-            em = em.parent.find_elements_by_xpath("//p[contains(text(), 'Others')]")
+            em = driver.find_elements_by_xpath("//p[contains(text(), 'Brand')]")
+            em = em[0].parent.find_elements_by_xpath("//p[contains(text(), 'Others')]")
             em[0].click()
 
 
@@ -211,6 +211,14 @@ def numberFill():
             print('Number filled')
             time.sleep(1)
 
+def morethan():
+    em = driver.find_elements_by_xpath("//div[.//h2[contains(text(), 'optional details')]]")
+    ee = em[0].find_elements_by_xpath("//button[.//span[contains(text(), 'Show')]]")
+    ee[0].click()
+    time.sleep(1)
+    rr = driver.find_elements_by_xpath("//input[@name='field_multi_quantities']")
+    rr[0].click()
+    
 
 #Fill all textarea fields with text 'sample' where is required
 def textAreaFill():
@@ -283,9 +291,9 @@ def downloadFile(photo):
     URL = photo
     picture_req = requests.get(URL)
     if picture_req.status_code == 200:
-        with open('data\\'+st+".jpg", 'wb') as f:
+        with open('data/'+st+".jpg", 'wb') as f:
             f.write(picture_req.content)
-            return 'data\\'+st+".jpg"
+            return 'data/'+st+".jpg"
     return ''
 
 def uploadPhoto(urls):
@@ -294,7 +302,7 @@ def uploadPhoto(urls):
         if(photo != ''):
             print(photo)
             elm = driver.find_element_by_xpath("//input[@type='file']")
-            st = os.getcwd() + '\\'+ downloadFile(photo)
+            st = os.getcwd() + '/'+ downloadFile(photo)
             print(st)
             elm.send_keys(st)
             print("photo sended")
@@ -374,6 +382,12 @@ def upload(category, title, condition, price, descp, photo, row):
 
     print("--dealMethod-fill")
     dealMethod()
+
+    try:
+        morethan()
+    except:
+         print("--error-morethan")
+
 
     print("--csv-fill")
 
