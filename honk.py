@@ -17,6 +17,7 @@ import os
 from selenium.webdriver.common.keys import Keys
 now = datetime.now() # current date and time
 import fileinput
+rand = 1
 url = 'https://www.carousell.sg'
 options = webdriver.ChromeOptions()
 options.add_experimental_option('w3c', True)
@@ -64,13 +65,11 @@ def super_get(url):
     driver.execute_script("window.alert = null;")
     driver.execute_script("Window.prototype.alert = null;")
     driver.refresh()
-    time.sleep(3)
+    time.sleep(1)
     try:
         alert_obj = driver.switch_to.alert
         time.sleep(1)
         alert_obj.accept()
-        alert_obj.dismiss()
-        time.sleep(1)
         driver.execute_script("window.alert = null;")
         driver.execute_script("Window.prototype.alert = null;")
 
@@ -78,7 +77,7 @@ def super_get(url):
         print('s')
     time.sleep(1)
     driver.get(url)
-    time.sleep(2)
+    time.sleep(rand)
 
     
     
@@ -125,7 +124,7 @@ def dealMethod():
     em = driver.find_elements_by_xpath("//div[@data-testid='delivery_period_dropdown'][@role='dropdown']")
     em[0].click()
     time.sleep(1)
-    em = driver.find_elements_by_xpath("//div[@data-testid='5']")
+    em = driver.find_elements_by_xpath("//div[@data-testid='3']")
     em[0].click()
     time.sleep(1)
     em = driver.find_elements_by_xpath("//input[@name='shipping_custom_delivery']")
@@ -230,7 +229,7 @@ def submitAndGetResult(row):
     print('Submitting')
     time.sleep(10)
     try:
-        em = driver.find_element_by_xpath("//p[contains(text(), 'Similar to your existing listing')]")
+        em = driver.find_element_by_xpath("//*[contains(text(), 'Similar to your existing listing')]")
         sheet[f"AB{indexG}"] = 'Duplicate'
         return 'Similar'
     except:
@@ -426,7 +425,8 @@ def main(args):
     print(args)
     print(args[0])
     init(str(args[0]))
-    book = openpyxl.load_workbook(str(args[0]))
+    rand = int(args[0])
+    book = openpyxl.load_workbook('sample.xlsx')
     sheet = book.active
     counter = 0
     for index in range(2, 100000000):
@@ -434,7 +434,8 @@ def main(args):
         print(counter," next item ")
         if(sheet[f"F{index}"].value == None):
             break
-
+        if(sheet[f"AB{index}"].value == 'Duplicate' or sheet[f"AB{index}"].value=='Listed'):
+            continue
         sheet[f"AD{index}"].value = now.strftime("%m/%d/%Y, %H:%M:%S")
         try:
             images = convertToStr(sheet[f"I{index}"].value) + ';;;' + convertToStr(sheet[f"J{index}"].value) + ';;;' + convertToStr(sheet[f"K{index}"].value) + ';;;'
@@ -445,7 +446,7 @@ def main(args):
             title = convertToStr(sheet[f"D{index}"].value) + ' ' + convertToStr(sheet[f"E{index}"].value)
             condition = 'Brand new'
             price = sheet[f"F{index}"].value
-            descp = convertToStr(sheet[f"G{index}"].value) + '\n' + convertToStr(sheet[f"H{index}"].value)
+            descp = convertToStr(sheet[f"G{index}"].value) + '\n\n' + convertToStr(sheet[f"H{index}"].value)
             roww = [category, title, condition, price, descp, images]
             print(roww)
             res = upload(category, title, condition, price, descp, images, roww)       
@@ -453,7 +454,7 @@ def main(args):
             sheet[f"AB{index}"] = 'Error'
             traceback.print_exception(*sys.exc_info())
            
-        book.save(str(args[0]))
+        book.save('sample.xlsx')
         super_get('https://www.carousell.sg/sell')
 
         counter+=1
