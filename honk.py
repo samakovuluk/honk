@@ -291,9 +291,9 @@ def downloadFile(photo):
     URL = photo
     picture_req = requests.get(URL)
     if picture_req.status_code == 200:
-        with open('data/'+st+".jpg", 'wb') as f:
+        with open('data\\'+st+".jpg", 'wb') as f:
             f.write(picture_req.content)
-            return 'data/'+st+".jpg"
+            return 'data\\'+st+".jpg"
     return ''
 
 def uploadPhoto(urls):
@@ -302,7 +302,7 @@ def uploadPhoto(urls):
         if(photo != ''):
             print(photo)
             elm = driver.find_element_by_xpath("//input[@type='file']")
-            st = os.getcwd() + '/'+ downloadFile(photo)
+            st = os.getcwd() + '\\'+ downloadFile(photo)
             print(st)
             elm.send_keys(st)
             print("photo sended")
