@@ -432,7 +432,7 @@ def main(args):
     for index in range(2, 100000000):
         indexG = index
         print(counter," next item ")
-        if(sheet[f"D{index}"].value == None):
+        if(sheet[f"F{index}"].value == None):
             break
 
         sheet[f"AD{index}"].value = now.strftime("%m/%d/%Y, %H:%M:%S")
