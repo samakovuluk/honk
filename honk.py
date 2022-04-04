@@ -19,6 +19,23 @@ now = datetime.now() # current date and time
 import fileinput
 rand = int(input("please type number for delay: "))
 url = 'https://www.carousell.sg'
+
+
+fie = int(input("choose file: \n 1. amzscrp_all.xlsx \n 2. amzscrp_solo.xlsx \n 3. carouscrp.xlsx \n number: "))
+
+itemC = int(input("how many items you want to list: "))
+itemCounter = 0
+
+if(fie == 1):
+    fie = 'amzscrp_all.xlsx'
+elif(fie == 2):
+    fie = 'amzscrp_solo.xlsx'
+elif(fie == 3):
+    fie = 'carouscrp.xlsx'
+else:
+    fie = 'sample.xlsx'
+
+
 options = webdriver.ChromeOptions()
 options.add_experimental_option('w3c', True)
 options.add_argument("--disable-popup-blocking")
@@ -239,6 +256,7 @@ def submitAndGetResult(row):
     try:
         em = driver.find_element_by_xpath("//*[contains(text(), 'Similar to your existing listing')]")
         sheet[f"AB{indexG}"] = 'Duplicate'
+        sheet[f"AD{indexG}"].value = now.strftime("%m/%d/%Y, %H:%M:%S")
         return 'Similar'
     except:
         em = driver.find_element_by_xpath("//p[contains(text(), 'Successfully listed')]")
@@ -247,6 +265,7 @@ def submitAndGetResult(row):
         for t in tmp:
             if t.span and 'View listing' in t.span.text:
                 sheet[f"AB{indexG}"] = 'Listed'
+                sheet[f"AD{indexG}"].value = now.strftime("%m/%d/%Y, %H:%M:%S")
                 listing_url = 'https://www.carousell.sg' + t['href']
                 sheet[f"AC{indexG}"] = listing_url
                 break
@@ -438,10 +457,12 @@ def main(args):
     global indexG
   
     init('')
-    book = openpyxl.load_workbook('sample.xlsx')
+    book = openpyxl.load_workbook(fie)
     sheet = book.active
     counter = 0
     for index in range(2, 100000000):
+        if(counter>=itemC):
+            break
         indexG = index
         print(counter," next item ")
         if(sheet[f"F{index}"].value == None):
@@ -466,7 +487,7 @@ def main(args):
             sheet[f"AB{index}"] = 'Error'
             traceback.print_exception(*sys.exc_info())
            
-        book.save('sample.xlsx')
+        book.save(fie)
         super_get('https://www.carousell.sg/sell')
 
         counter+=1
