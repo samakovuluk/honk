@@ -289,7 +289,11 @@ def fillFromCsv(title, condition, price, descp):
         cond = driver.find_element_by_xpath("//*[contains(text(), '"+condition+"')]")
         cond.click()
     except:
-        print('Condition not flled')
+        try: 
+            cond = driver.find_element_by_xpath("//*[contains(text(), 'New')]")
+            cond.click()
+        except:
+            print('Condition not flled')
 
     time.sleep(2)
     try:
@@ -476,10 +480,10 @@ def main(args):
             images += ';;;' + convertToStr(sheet[f"O{index}"].value)  + ';;;'+ convertToStr(sheet[f"P{index}"].value)
 
             category = sheet[f"AA{index}"].value
-            title = convertToStr(sheet[f"D{index}"].value) + ' ' + convertToStr(sheet[f"E{index}"].value)
+            title = convertToStr(sheet[f"D{index}"].value).replace("_x000D_", "") + ' ' + convertToStr(sheet[f"E{index}"].value).replace("_x000D_", "")
             condition = 'Brand new'
             price = sheet[f"F{index}"].value
-            descp = convertToStr(sheet[f"G{index}"].value) + '\n\n' + convertToStr(sheet[f"H{index}"].value)
+            descp = convertToStr(sheet[f"G{index}"].value).replace("_x000D_", "") + '\n\n' + convertToStr(sheet[f"H{index}"].value).replace("_x000D_", "")
             roww = [category, title, condition, price, descp, images]
             print(roww)
             res = upload(category, title, condition, price, descp, images, roww)       
