@@ -2,7 +2,7 @@ import requests
 import json
 import sys
 import openpyxl
-
+import os.path
 
 listing = []
 
@@ -72,9 +72,22 @@ def itemParse(item):
             resp[f"image{i+1}"] = ''
 
     return resp
-   
 
-book = openpyxl.load_workbook('carouscraperesult.xlsx')
+def convertToStr(val):
+    try:
+        if(val!=None):
+            return str(val)
+    except:
+        return ""
+    return ""
+   
+namefile = ''
+if(os.path.exists('carouscrp.xlsx')):
+    namefile = 'carouscrp.xlsx'
+else:
+    namefile = 'scr.xlsx'
+
+book = openpyxl.load_workbook(namefile)
 sheet = book.active
 listSource = []
 for index in range(2,10000000):
@@ -117,7 +130,10 @@ for index in range(2,10000000):
                 sheet[f"A{index}"].value = items[counter]['keyword']
                 sheet[f"B{index}"].value = items[counter]['urlSource']
                 sheet[f"E{index}"].value = items[counter]['title'] or ''
-                sheet[f"H{index}"].value = items[counter]['description'] or ''
+                try:
+                    sheet[f"H{index}"].value = items[counter]['description'] or ''
+                except:
+                    sheet[f"H{index}"].value = ''
                 sheet[f"F{index}"].value = items[counter]['price'] or ''
                 sheet[f"I{index}"].value = items[counter]['image1'] or ''
                 sheet[f"J{index}"].value = items[counter]['image2'] or ''
@@ -128,7 +144,7 @@ for index in range(2,10000000):
                 sheet[f"O{index}"].value = items[counter]['image7'] or ''
                 sheet[f"P{index}"].value = items[counter]['image8'] or ''
                 sheet[f"AA{index}"].value = items[counter]['category'] or ''
-                book.save('carouscraperesult.xlsx')
+                book.save('carouscrp.xlsx')
                 counter+=1
         if(counter == len(items)):
             break
