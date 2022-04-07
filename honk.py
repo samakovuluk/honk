@@ -17,13 +17,13 @@ import os
 from selenium.webdriver.common.keys import Keys
 now = datetime.now() # current date and time
 import fileinput
-rand = int(input("please type number for delay: "))
+
 url = 'https://www.carousell.sg'
 
 
 fie = int(input("choose file: \n 1. amzscrp_all.xlsx \n 2. amzscrp_solo.xlsx \n 3. carouscrp.xlsx \n number: "))
-
 itemC = int(input("how many items you want to list: "))
+rand = int(input("please type number for delay: "))
 itemCounter = 0
 
 if(fie == 1):
@@ -129,6 +129,33 @@ def selectBrand():
             em = em[0].parent.find_elements_by_xpath("//p[contains(text(), 'Others')]")
             em[0].click()
 
+def selectSize():
+    em = driver.find_elements_by_xpath("//span[contains(text(), 'Size')]")
+    em[0].click()
+    time.sleep(2)
+    em = driver.find_elements_by_xpath("//div[@data-testid]")
+    em[-1].click()
+    time.sleep(1)
+    condition()
+
+def selectCompatibility():
+    em = driver.find_elements_by_xpath("//span[contains(text(), 'Compatibility')]")
+    em[0].click()
+    time.sleep(2)
+    eme = driver.find_elements_by_xpath("//div[@data-testid]")
+    eme[-1].click()
+    condition()
+
+def selectGender():
+    em = driver.find_elements_by_xpath("//button[.//span[contains(text(), 'Gender')]]")
+    em[0].click()
+    time.sleep(2)
+    eme = driver.find_elements_by_xpath("//p[contains(text(), 'Girl')]")
+    eme[0].click()
+    em = driver.find_elements_by_xpath("//button[.//span[contains(text(), 'Gender')]]")
+    em[0].click()
+   
+
 
 
 def dealMethod():
@@ -171,7 +198,16 @@ def ageRange():
     
 
 
-
+def condition():
+    try:
+        cond = driver.find_element_by_xpath("//*[contains(text(), 'Brand new')]")
+        cond.click()
+    except:
+        try: 
+            cond = driver.find_element_by_xpath("//*[contains(text(), 'New')]")
+            cond.click()
+        except:
+            print('Condition not flled')
 
     
 
@@ -256,7 +292,6 @@ def submitAndGetResult(row):
     try:
         em = driver.find_element_by_xpath("//*[contains(text(), 'Similar to your existing listing')]")
         sheet[f"AB{indexG}"] = 'Duplicate'
-        sheet[f"AD{indexG}"].value = now.strftime("%m/%d/%Y, %H:%M:%S")
         return 'Similar'
     except:
         em = driver.find_element_by_xpath("//p[contains(text(), 'Successfully listed')]")
@@ -369,27 +404,28 @@ def upload(category, title, condition, price, descp, photo, row):
     counterRef = 0
 
     time.sleep(3)
-
-    print("---select-fill")
-    selectFill()
-    print("---radio-fill")
-    radioFill()
-    print("--text-fill")
-    #textFill()
-    print("--number-fill")
-    #numberFill()
-    print("--number-fill")
-    #numberFill()
-
-
-    print("--checkbox-fill")
-    #checkboxMailingFill()
-
-    print("--selectBrand-fill")
+ 
     try:
         selectBrand()
     except:
         print('error brand')
+    time.sleep(3)
+    try:
+        selectGender()
+    except:
+        print('error selectGender')
+    time.sleep(3)
+    try:
+        selectCompatibility()
+    except:
+        print('error selectCompatibility')
+    time.sleep(3)
+    try:
+        selectSize()
+    except:
+        print('error selectSize')
+    
+    
 
     print("--typeD-fill")
     try:
@@ -403,14 +439,13 @@ def upload(category, title, condition, price, descp, photo, row):
     except:
         print('error ageRange')
 
-    print("--dealMethod-fill")
+    
     dealMethod()
 
     try:
         morethan()
     except:
          print("--error-morethan")
-
 
     print("--csv-fill")
 
@@ -473,7 +508,6 @@ def main(args):
             break
         if(sheet[f"AB{index}"].value == 'Duplicate' or sheet[f"AB{index}"].value=='Listed'):
             continue
-        sheet[f"AD{index}"].value = now.strftime("%m/%d/%Y, %H:%M:%S")
         try:
             images = convertToStr(sheet[f"I{index}"].value) + ';;;' + convertToStr(sheet[f"J{index}"].value) + ';;;' + convertToStr(sheet[f"K{index}"].value) + ';;;'
             images += convertToStr(sheet[f"L{index}"].value) + ';;;' + convertToStr(sheet[f"M{index}"].value) + ';;;' + convertToStr(sheet[f"N{index}"].value)
