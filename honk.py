@@ -182,7 +182,6 @@ def typeD():
         time.sleep(2)
         em = typ.find_elements_by_xpath("//div[@data-testid]")
         em[-1].click()
-        driver.find_elements_by_xpath("//h2[contains(text(), 'payment methods')]")[0].click()
     except:
         typ = driver.find_elements_by_xpath("//p[contains(text(), 'Type')]")[0]
         em = typ.parent.find_elements_by_xpath("//p[contains(text(), 'Others')]")
@@ -285,10 +284,11 @@ def textAreaFill():
 def submitAndGetResult(row):
     global counterSub
     global counter
+    time.sleep(4)
     elm = driver.find_element_by_xpath("//button[@type='submit'][@role='submitButton'][contains(text(), 'List now')]")
     elm.submit()
     print('Submitting')
-    time.sleep(10)
+    time.sleep(15)
     try:
         em = driver.find_element_by_xpath("//*[contains(text(), 'Similar to your existing listing')]")
         sheet[f"AB{indexG}"] = 'Duplicate'
@@ -339,7 +339,9 @@ def fillFromCsv(title, condition, price, descp):
     time.sleep(2)
     try:
         desc = driver.find_element_by_xpath("//textarea[@placeholder='Describe what you are selling and include any details a buyer might be interested in. People love items with stories!']")
-        desc.send_keys(descp)
+        desc.send_keys(descp.split('\n\n')[0])
+        desc.send_keys('\n\n')
+        desc.send_keys(descp.split('\n\n')[1])
     except:
         print('description not filled')
     print('Data from csv filled')
@@ -451,6 +453,7 @@ def upload(category, title, condition, price, descp, photo, row):
 
 
     fillFromCsv(title, condition, price, descp)
+    time.sleep(3)
     return submitAndGetResult(row)
 
 #Uploading cookie to authorize
@@ -516,7 +519,7 @@ def main(args):
             category = sheet[f"AA{index}"].value
             title = convertToStr(sheet[f"D{index}"].value).replace("_x000D_", "") + ' ' + convertToStr(sheet[f"E{index}"].value).replace("_x000D_", "")
             condition = 'Brand new'
-            price = sheet[f"F{index}"].value
+            price = round(sheet[f"F{index}"].value, 2)
             descp = convertToStr(sheet[f"G{index}"].value).replace("_x000D_", "") + '\n\n' + convertToStr(sheet[f"H{index}"].value).replace("_x000D_", "")
             roww = [category, title, condition, price, descp, images]
             print(roww)
